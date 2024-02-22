@@ -3,5 +3,5 @@ This repository contains all the code necessary for the python programming assig
 
 # Usage
 1. If you have git simply clone the repository, otherwise download the zip 
-2. Put your assignment notebooks in the same folder as model_template.ipynb
+2. Put your assignment notebooks in the same folder as `model_template.ipynb`
 3. Follow the instructions in the notebook.
