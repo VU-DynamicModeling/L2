@@ -19,8 +19,8 @@ class StateMachine:
         """
         self.max_t = max_t
         self.rules = []
-        self._predicates = None
-        self._sorts = None
+        self._predicates = {}
+        self._sorts = {}
         self._states = None
 
     @property
