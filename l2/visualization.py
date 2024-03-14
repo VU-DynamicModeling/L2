@@ -64,6 +64,8 @@ def check_completeness(visual_dic, StateMachine):
         for agent in predicate.keys():
             for i in range(0, StateMachine.max_t):
                 t1 = i + 1
+                if i == len(visual_dic[predicate_name][agent]):
+                    visual_dic[predicate_name][agent].append((t1, None))
                 t2 = visual_dic[predicate_name][agent][i][0]
                 if t1 != t2:
                     visual_dic[predicate_name][agent].insert(i, (t1, None))
