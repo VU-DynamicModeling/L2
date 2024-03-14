@@ -19,8 +19,8 @@ class StateMachine:
         """
         self.max_t = max_t
         self.rules = []
-        self._predicates = {}
-        self._sorts = {}
+        self._predicates = None
+        self._sorts = None
         self._states = None
 
     @property
@@ -243,7 +243,7 @@ class StateMachine:
             for sort in sorts:
                 unique_sorts.add(sort)
 
-        unique_sorts = unique_sorts.difference({"BOOLEAN", "REAL"})
+        unique_sorts = unique_sorts.difference({"BOOLEAN", "REAL", "PREDICATE"})
 
         for sort in unique_sorts:
             if sort not in self.sorts:
@@ -253,10 +253,6 @@ class StateMachine:
         """
             run all rules that are inside the rules.py file
         """
-        
-        self.states = self.create_states()
-        self.fill_states(self._scenario)
-
         if debug_mode:
             self.show_debug_info()
             # create the pretty table of states
