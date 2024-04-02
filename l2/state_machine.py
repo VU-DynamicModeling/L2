@@ -253,6 +253,9 @@ class StateMachine:
         """
             run all rules that are inside the rules.py file
         """
+        self.states = self.create_states()
+        self.fill_states(self._scenario)
+
         if debug_mode:
             self.show_debug_info()
             # create the pretty table of states
